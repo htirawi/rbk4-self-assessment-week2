@@ -12,6 +12,7 @@ var SERVER_URL = 'http://parse.shared.hackreactor.com/chatterbox/classes/message
 var getData = function() {
   $.ajax(SERVER_URL + '?order=-createdAt', {
     contentType: 'application/json',
+    type: 'GET',
     success: function(data) {
       processData(data); // eslint-disable-line no-use-before-define
     },
@@ -119,5 +120,6 @@ var postData = function(message, username) {
     error: function(data) {
       console.log(data);
     }
+
   });
 };
